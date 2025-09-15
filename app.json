@@ -1,7 +1,11 @@
 {
   "expo": {
-    "name": "mercadinho-sao-geraldo",
+    "name": "Mercadinho São Geraldo",
     "slug": "mercadinho-sao-geraldo",
+    "scheme": "mercadinho",
+    "plugins": ["expo-router"],
+    "experiments": { "typedRoutes": true },
+    "extra": { "eas": { "projectId": "local" } },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
