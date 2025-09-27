@@ -1,34 +1,39 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 
 export default function Page() {
   return (
-    <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Mercadinho São Geraldo</Text>
+        <Text style={styles.subtitle}>
+          Agora com suporte completo para Expo Go e para o navegador.
+        </Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   container: {
     flex: 1,
     alignItems: "center",
-    padding: 24,
-  },
-  main: {
-    flex: 1,
     justifyContent: "center",
-    maxWidth: 960,
-    marginHorizontal: "auto",
+    paddingHorizontal: 24,
+    gap: 16,
   },
   title: {
-    fontSize: 64,
+    fontSize: 32,
     fontWeight: "bold",
+    textAlign: "center",
+    color: "#1A1A1A",
   },
   subtitle: {
-    fontSize: 36,
+    fontSize: 18,
+    textAlign: "center",
     color: "#38434D",
   },
 });
