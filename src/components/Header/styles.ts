@@ -37,5 +37,13 @@ export const styles = StyleSheet.create({
     width: 46,
     height: 46,
     borderRadius: radius.pill,
+    backgroundColor: colors.primary,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  avatarText: {
+    color: colors.cardBackground,
+    fontSize: typography.subtitle,
+    fontWeight: "700",
   },
 });

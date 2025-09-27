@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { ActivityIndicator, FlatList, ScrollView, Text, View } from "react-native";
-import { BannerCard } from "../../components/BannerCard/BannerCard";
 import { CategoryPill } from "../../components/CategoryPill/CategoryPill";
 import { Header } from "../../components/Header/Header";
 import { InfoRow } from "../../components/InfoRow/InfoRow";
@@ -15,7 +14,7 @@ import { styles } from "./styles";
 export function HomeScreen() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const { categories, promotions, featured, essentials, isLoading, hasError } = useMarketData();
+  const { categories, featured, essentials, isLoading, hasError } = useMarketData();
 
   const filteredEssentials = useMemo(() => {
     const query = search.toLowerCase();
@@ -32,7 +31,7 @@ export function HomeScreen() {
 
   return (
     <ScrollView style={styles.screen} showsVerticalScrollIndicator={false}>
-      <Header userName="Olá, Maria" />
+      <Header userName="Maria Souza" />
 
       <View style={styles.searchContainer}>
         <SearchBar value={search} onChangeText={setSearch} />
@@ -56,10 +55,6 @@ export function HomeScreen() {
           )}
         />
       </View>
-
-      {promotions.map((promotion) => (
-        <BannerCard key={promotion.id} promotion={promotion} />
-      ))}
 
       <View style={styles.sectionSpacing}>
         <SectionTitle title="Ofertas especiais" actionLabel="Ver mais" />

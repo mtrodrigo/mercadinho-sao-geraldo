@@ -1,17 +1,8 @@
 import { useEffect, useState } from "react";
-import {
-  Category,
-  Product,
-  Promotion,
-  fetchCategories,
-  fetchDailyEssentials,
-  fetchFeaturedProducts,
-  fetchPromotions,
-} from "../services/api";
+import { Category, Product, fetchCategories, fetchDailyEssentials, fetchFeaturedProducts } from "../services/api";
 
 type MarketData = {
   categories: Category[];
-  promotions: Promotion[];
   featured: Product[];
   essentials: Product[];
   isLoading: boolean;
@@ -21,7 +12,6 @@ type MarketData = {
 export function useMarketData() {
   const [data, setData] = useState<MarketData>({
     categories: [],
-    promotions: [],
     featured: [],
     essentials: [],
     isLoading: true,
@@ -33,9 +23,8 @@ export function useMarketData() {
 
     async function load() {
       try {
-        const [categories, promotions, featured, essentials] = await Promise.all([
+        const [categories, featured, essentials] = await Promise.all([
           fetchCategories(),
-          fetchPromotions(),
           fetchFeaturedProducts(),
           fetchDailyEssentials(),
         ]);
@@ -44,7 +33,6 @@ export function useMarketData() {
 
         setData({
           categories,
-          promotions,
           featured,
           essentials,
           isLoading: false,
