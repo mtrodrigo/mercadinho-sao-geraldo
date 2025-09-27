@@ -17,14 +17,13 @@ export function ProductCard({ product, onPress }: ProductCardProps) {
         </View>
       ) : null}
 
-      <Image
-        style={styles.image}
-        source={{
-          uri:
-            product.imageUrl ??
-            "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=800&q=60",
-        }}
-      />
+      {product.imageUrl ? (
+        <Image style={styles.image} source={{ uri: product.imageUrl }} />
+      ) : (
+        <View style={styles.placeholder}>
+          <Text style={styles.placeholderText}>{product.name.slice(0, 2).toUpperCase()}</Text>
+        </View>
+      )}
 
       <View style={styles.info}>
         <Text style={styles.name} numberOfLines={2}>

@@ -31,6 +31,21 @@ export const styles = StyleSheet.create({
     borderRadius: radius.md,
     marginBottom: spacing.md,
   },
+  placeholder: {
+    width: "100%",
+    height: 120,
+    borderRadius: radius.md,
+    marginBottom: spacing.md,
+    backgroundColor: colors.border,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  placeholderText: {
+    fontSize: typography.subtitle,
+    fontWeight: "700",
+    color: colors.mutedText,
+    textTransform: "uppercase",
+  },
   info: {
     gap: spacing.xs,
   },
